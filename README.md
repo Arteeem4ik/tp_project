@@ -4,4 +4,4 @@
 
 
 
-UML диаграмам проекта - https://lucid.app/documents/view/571d1550-239c-44a5-9c22-854cb879af51
+UML диаграмма проекта - https://lucid.app/documents/view/571d1550-239c-44a5-9c22-854cb879af51
