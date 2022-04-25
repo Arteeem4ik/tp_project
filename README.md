@@ -8,4 +8,5 @@
 4) cmake ..
 5) make
 6) ./tp_sea_battle
+
 UML диаграмма проекта - https://lucid.app/documents/view/571d1550-239c-44a5-9c22-854cb879af51
