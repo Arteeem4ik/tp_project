@@ -6,6 +6,7 @@
   3) cd build
   4) cmake ..
   5) make
+  6) ./tp_sea_battle
 
 
 
