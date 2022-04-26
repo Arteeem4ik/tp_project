@@ -70,16 +70,16 @@ void Interface::PrintIncorrectShoot() {
 void Interface::PrintInfo() {
   std::cout
       << "Здравствуйте! Игра 'Морской бой', необходимо потопить все корабли противника.\n"
-         " Пример расстановки однопалубных кораблуй: A1 A3 A5 A7.\n"
+         " Пример расстановки однопалубного корабля: A1 A3 A5 A7 .\n"
          " Пример расстановки двухпалубных кораблей: A1:A3 B1:D1 B2:C2.\n\n";
 }
 
 void Interface::PrintInjure() {
+  system("clear");
   std::cout << "\nРанил\n\n";
 }
 
 void Interface::PrintMissed() {
-  system("clear");
   std::cout << "\nМимо\n\n";
 }
 
