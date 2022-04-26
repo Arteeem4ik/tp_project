@@ -1,11 +1,14 @@
 #ifndef TP_SEA_BATTLE__PLAYER_H_
 #define TP_SEA_BATTLE__PLAYER_H_
 #include "field.h"
+#include "interface.h"
 #include <string>
 #include <iostream>
 
 class Player {
  public:
+  Interface interface;
+
   int points = 0;
 
   std::string name = "";
@@ -15,6 +18,9 @@ class Player {
   bool move;
 
   Field field;
+
+  Player(Interface interface) : interface(interface) {
+  }
 
   bool operator==(Player other);
 
