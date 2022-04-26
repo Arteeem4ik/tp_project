@@ -1,5 +1,4 @@
 #include "../headers/player.h"
-#include "../headers/interface.h"
 
 bool Player::operator==(Player other) {
   return (name == other.name);

@@ -1,6 +1,7 @@
 #include "../headers/game.h"
 
 int main() {
-  Game sea_battle;
+  Interface iface;
+  Game sea_battle(iface);
   sea_battle.SeaBattle();
 }
