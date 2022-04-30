@@ -51,6 +51,12 @@ class Interface {
   static void AddPassword(std::string& password);
 
   static void EnterMove(std::string& move);
+
+  static void PrintUsedSpecialMove();
+
+  static void PrintIncorrectSpecialMove();
+
+  static void PrintHit();
 };
 
 #endif //TP_SEA_BATTLE__INTERFACE_H_

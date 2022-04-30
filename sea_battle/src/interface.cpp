@@ -71,15 +71,18 @@ void Interface::PrintInfo() {
   std::cout
       << "Здравствуйте! Игра 'Морской бой', необходимо потопить все корабли противника.\n"
          " Пример расстановки однопалубного корабля: A1 A3 A5 A7 .\n"
-         " Пример расстановки двухпалубных кораблей: A1:A3 B1:D1 B2:C2.\n\n";
+         " Пример расстановки двухпалубных кораблей: A1:A3 B1:D1 B2:C2.\n"
+         "Также у каждого игрока есть право 1 раз за игру сделать особый ход: выстрелить сразу по"
+         "целому ряду кораблей противника. Этот ход делается так: SX, где Х - номер ряда, по которому"
+         "вы хотите стрелять\n\n";
 }
 
 void Interface::PrintInjure() {
-  system("clear");
   std::cout << "\nРанил\n\n";
 }
 
 void Interface::PrintMissed() {
+  system("clear");
   std::cout << "\nМимо\n\n";
 }
 
@@ -126,4 +129,16 @@ void Interface::EnterMove(std::string& move) {
 
 void Interface::AddPassword(std::string& password) {
   std::cin >> password;
+}
+
+void Interface::PrintHit() {
+  std::cout << "Попал\n";
+}
+
+void Interface::PrintIncorrectSpecialMove() {
+  std::cout << "Некорректный особый ход\n";
+}
+
+void Interface::PrintUsedSpecialMove() {
+  std::cout << "Вы уже использовали свой особый ход\n";
 }
