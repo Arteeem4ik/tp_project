@@ -10,31 +10,31 @@ Player& Game::Opponent(Player player) {
 
 void Game::Move(Player& player) {
   bool change_move = false;
-  Interface::PrintMove(player.name);
+  interface.PrintMove(player.name);
   std::string str;
   bool correct = true;
   while (correct) {
-    Interface::EnterMove(str);
+    interface.EnterMove(str);
     if (str[0] < 'A' || str[0] > 'H' || str[1] < '1' || str[1] > '8') {
-      Interface::PrintIncorectMove();
+      interface.PrintIncorectMove();
       continue;
     }
     if (player.field.opp_field[str[1] - '0'][str[0] - 64].condition == "beaten_ship") {
-      Interface::PrintIncorrectShoot();
+      interface.PrintIncorrectShoot();
       continue;
     } else if (player.field.opp_field[str[1] - '0'][str[0] - 64].condition == "ship") {
       Opponent(player).field.own_field[str[1] - '0'][str[0] - 64].condition = "beaten_ship";
       player.field.opp_field[str[1] - '0'][str[0] - 64].condition = "beaten_ship";
       if (Opponent(player).field.IsDied(str[1] - '0', str[0] - 64)) {
-        Interface::PrintSunk();
+        interface.PrintSunk();
         ++(player.points);
       } else {
-        Interface::PrintInjure();
+        interface.PrintInjure();
       }
     } else {
       Opponent(player).field.own_field[str[1] - '0'][str[0] - 64].condition = "beaten_empty";
       player.field.opp_field[str[1] - '0'][str[0] - 64].condition = "beaten_empty";
-      Interface::PrintMissed();
+      interface.PrintMissed();
       player.move = false;
       Opponent(player).move = true;
       change_move = true;
@@ -45,34 +45,35 @@ void Game::Move(Player& player) {
     bool correct = true;
     while (correct) {
       std::string password;
-      Interface::PrintReadPassword(Opponent(player).name);
-      Interface::EnterPassword(password);
+      interface.PrintReadPassword(Opponent(player).name);
+      interface.EnterPassword(password);
       if (password == Opponent(player).password) {
          correct = false;
       } else {
-        Interface::PrintIncorrectPassword(Opponent(player).name);
+        interface.PrintIncorrectPassword(Opponent(player).name);
       }
     }
   }
 }
 
 void Game::SeaBattle() {
-  Interface::PrintInfo();
+
+  interface.PrintInfo();
   std::string first_player_name;
   std::string second_player_name;
   std::string first_password;
   std::string second_password;
-  Interface::PrintFirstPresentation();
-  Interface::EnterName(first_player_name);
+  interface.PrintFirstPresentation();
+  interface.EnterName(first_player_name);
   first.name = first_player_name;
-  Interface::PrintPassword(first.name);
-  Interface::AddPassword(first_password);
+  interface.PrintPassword(first.name);
+  interface.AddPassword(first_password);
   first.password = first_password;
-  Interface::PrintSecondPresentation();
-  Interface::EnterName(second_player_name);
+  interface.PrintSecondPresentation();
+  interface.EnterName(second_player_name);
   second.name = second_player_name;
-  Interface::PrintPassword(second.name);
-  Interface::AddPassword(second_password);
+  interface.PrintPassword(second.name);
+  interface.AddPassword(second_password);
   second.password = second_password;
   first.move = true, second.move = false;
   first.PlayerArrangement();
@@ -85,17 +86,17 @@ void Game::SeaBattle() {
   }
   while (game) {
     if (first.move) {
-      Interface::PrintField(first.field);
+      interface.PrintField(first.field);
       Move(first);
       if (first.points == 10) {
         Interface::PrintEnd(first.name);
         game = false;
       }
     } else {
-      Interface::PrintField(second.field);
+      interface.PrintField(second.field);
       Move(second);
       if (second.points == 10) {
-        Interface::PrintEnd(second.name);
+        interface.PrintEnd(second.name);
         game = false;
       }
     }

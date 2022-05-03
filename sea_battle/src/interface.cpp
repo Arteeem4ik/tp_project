@@ -39,6 +39,7 @@ void Interface::PrintIncorrectArrangement(std::string str) {
 }
 
 void Interface::PrintSingleDeck(std::string name) {
+  system("clear");
   std::cout << "\n" << name << ", расставьте однопалубные корабли\n";
 }
 
@@ -69,11 +70,12 @@ void Interface::PrintIncorrectShoot() {
 void Interface::PrintInfo() {
   std::cout
       << "Здравствуйте! Игра 'Морской бой', необходимо потопить все корабли противника.\n"
-         " Пример расстановки однопалубного корабля: A1.\n"
-         " Пример расстановки двухпалубных кораблей: A1:A3, B1:D1.\n\n";
+         " Пример расстановки однопалубного корабля: A1 A3 A5 A7 .\n"
+         " Пример расстановки двухпалубных кораблей: A1:A3 B1:D1 B2:C2.\n\n";
 }
 
 void Interface::PrintInjure() {
+  system("clear");
   std::cout << "\nРанил\n\n";
 }
 

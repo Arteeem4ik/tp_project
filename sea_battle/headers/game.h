@@ -1,12 +1,17 @@
 #ifndef TP_SEA_BATTLE__GAME_H_
 #define TP_SEA_BATTLE__GAME_H_
 #include "player.h"
+#include "interface.h"
 
 class Game {
  public:
-  Player first;
-  Player second;
+  Interface interface;
+  Player first = Player(interface);
+  Player second = Player(interface);
   bool game = true;
+
+  Game(Interface interface) : interface(interface) {
+  }
 
   Player& Opponent(Player player);
 
