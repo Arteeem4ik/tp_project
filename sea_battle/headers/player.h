@@ -8,7 +8,6 @@
 class Player {
  public:
   Interface interface;
-
   int points = 0;
 
   std::string name = "";

@@ -57,6 +57,7 @@ void Game::Move(Player& player) {
 }
 
 void Game::SeaBattle() {
+
   interface.PrintInfo();
   std::string first_player_name;
   std::string second_player_name;
